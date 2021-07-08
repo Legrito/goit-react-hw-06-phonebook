@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { ContactItem } from './ContactItem';
 import styles from './ContactList.module.css';
-import {deleteContact} from '../../redux/actions';
+import actions from '../../redux/actions';
 
 const ContactList = ({ contacts, onClick}) => {
     return (
@@ -28,7 +28,7 @@ const mapStatetoProps = ({contacts: {items, filter}}) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onClick: id => dispatch(deleteContact(id))
+  onClick: id => dispatch(actions.deleteContact(id))
 })
 
 
